@@ -1,4 +1,4 @@
-# Frahidi System for Arabic Poetry Prosody Tasks
+# Frahidi: Advancing Classical Arabic Poetry Analysis with Modern AI Techniques
 
  <p align="center"> 
  <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/FarahidiLogo1.png" width = "300px"/>
