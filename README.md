@@ -1,7 +1,7 @@
 # Frahidi System for Arabic Poetry Prosody Tasks
 
  <p align="center"> 
- <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/FarahidiLogo.png" width = "300px"/>
+ <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/FarahidiLogo1.png" width = "300px"/>
  </p>
  
 Welcome to Frahidi, a comprehensive system designed to perform prosodic tasks for classical Arabic poetry. Frahidi generates high-quality datasets that can be used for fine-tuning AI models, offering robust support for Arabic poetry's complex prosodic structure. This system follows the traditional principles of Arabic prosody while leveraging modern AI technologies.
@@ -49,16 +49,27 @@ The core of Frahidi’s system is **Prosodic Writing**. This step converts writt
 - **Prosodic Rules Library**: Frahidi’s library contains a robust set of functions that apply traditional Arabic prosody rules to each poetic line.
 - **Output**: The final result is a prosodically annotated verse, where only the spoken sounds are written.
 
+ <p align="center"> 
+ <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/ProsodyWriting.png" width = "800px"/>
+ </p>
+ 
 ### Meter and Taf’ilat Detection
 Once a poem is converted into prosodic writing, Frahidi uses a custom encoding system (e.g., 0 for silent, 1 for vowelized) to identify:
 - **Poetic Meters**: Frahidi detects which of the 16 classical Arabic poetic meters (bahrs) the poem follows.
 - **Taf’ilat Patterns**: Prosodic units (taf’ilat) are discovered by referencing six traditional prosody texts.
 
+ <p align="center"> 
+ <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/Feet_Detection.png" width = "800px"/>
+ </p>
+ 
 ### Fine-grained Prosodic Analysis
 Frahidi further analyzes the poem for:
 - **Modifications**: Handling exceptional cases such as metrical shifts (zihafat and ‘ilal).
 - **Rhyme Rules**: It checks and analyzes rhyme patterns and resolves any structural issues.
 
+ <p align="center"> 
+ <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/FineGrainedProsodicAnalysis.png" width = "800px"/>
+ </p>
 ---
 
 ## Visualization of Results
