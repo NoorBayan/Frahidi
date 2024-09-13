@@ -50,16 +50,27 @@ The core of Frahidi’s system is **Prosodic Writing**. This step converts writt
 - **Output**: The final result is a prosodically annotated verse, where only the spoken sounds are written.
 
  <p align="center"> 
- <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/ProsodyWriting.png" width = "800px"/>
+ <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/ProsodyWriting.png" width = "600px"/>
  </p>
  
 ### Meter and Taf’ilat Detection
-Once a poem is converted into prosodic writing, Frahidi uses a custom encoding system (e.g., 0 for silent, 1 for vowelized) to identify:
+Once a poem is converted into prosodic writing, Frahidi uses a custom encoding system (e.g., 0 for silent, 1 for vowelized, and 2 for unvowelized) to identify:
 - **Poetic Meters**: Frahidi detects which of the 16 classical Arabic poetic meters (bahrs) the poem follows.
 - **Taf’ilat Patterns**: Prosodic units (taf’ilat) are discovered by referencing six traditional prosody texts.
 
+The Taf’ilat detection model consists of four main components:
+
+1. **Encoding Model**: This component receives the output from the prosodic writing system and encodes the letters (0 for silent, 1 for vowelized, and 2 for unvowelized). Unfortunately, the provided vowelization model does not achieve full vowelization.
+
+2. **Taf’ilat Patterns Database**: This component represents the solution space for all possible patterns.
+
+3. **Pattern Detection Model**: Based on a search algorithm, this component explores the solution space. Due to the incomplete binary encoding caused by unvowelized letters, the search algorithm returns a set of near-optimal solutions rather than a single correct solution.
+
+4. **Dynamic Oracle Model**: Trained in parallel with the poetic meter detection model, this oracle model refines the results by receiving the detected meter. Based on the meter, it eliminates irrelevant taf’ilat patterns and categorizes the remaining solutions into two groups based on proximity to the correct pattern using a threshold function. During training, the selection is diversified between the two groups, adjusting error margins and tuning parameters, similar to processes in linguistic analysis systems, to minimize error margins.
+
+
  <p align="center"> 
- <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/Feet_Detection.png" width = "800px"/>
+ <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/Feet_Detection.png" width = "600px"/>
  </p>
  
 ### Fine-grained Prosodic Analysis
@@ -68,7 +79,7 @@ Frahidi further analyzes the poem for:
 - **Rhyme Rules**: It checks and analyzes rhyme patterns and resolves any structural issues.
 
  <p align="center"> 
- <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/FineGrainedProsodicAnalysis.png" width = "800px"/>
+ <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/FineGrainedProsodicAnalysis.png" width = "700px"/>
  </p>
 ---
 
@@ -77,18 +88,19 @@ Frahidi includes a visual component that presents all prosodic data in an intuit
 - **Meter and Taf’ilat**: Visual representation of the poem’s prosodic structure.
 - **Rhyme and Rhythm**: Detailed insights into rhyme patterns and rhythmic anomalies.
 
-![Methodology Workflow](path_to_methodology_image)
 
 ---
 
 ## Usage Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your_username/frahidi.git
+   git clone https://github.com/your_username/Frahidi.git
 
 ## Sample Outputs
 Here is an example of Frahidi's output:
-
+ <p align="center"> 
+ <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/PoemVisualization.png" width = "700px"/>
+ </p>
 
 ## Future Enhancements
 - **Support for Dialects**: Expansion of the system to handle non-Classical Arabic.
