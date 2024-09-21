@@ -96,6 +96,19 @@ Frahidi includes a visual component that presents all prosodic data in an intuit
    ```bash
    git clone https://github.com/your_username/Frahidi.git
 
+### Explore Frahidi on Google Colab
+To explore the full details of the Frahidi system and interact with its extensive features, access our interactive Google Colab notebook. This notebook provides an easy-to-use interface for searching, analyzing, and learning more about the Frahidi system.
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1c2AsPfdwj4ELEypTEmsSTewtVQ8MVXP3?usp=drive_link)
+
+ <p align="center">
+   <img src = "https://raw.githubusercontent.com/NoorBayan/Frahidi/main/images/FarahidiColab.png" width = "800px"/>
+ </p>
+
+### Steps to Use Frahidi on Google Colab:
+1. **Run the first cell** by clicking the "Run" button to load the necessary files and libraries.
+2. **Execute the notebook**, and dropdown menus will appear with various poetry categories. You can experiment by selecting different options, and the corresponding poetic data will be displayed based on your choices.
+
 ## Sample Outputs
 Here is an example of Frahidi's output:
  <p align="center"> 
